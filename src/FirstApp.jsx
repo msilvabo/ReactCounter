@@ -7,41 +7,31 @@ const nombre = {
 
 export const FirstApp = ( {
         title = "Titulo por defecto", 
-        valor, 
-        otro = 111,
+        subTitle = "Subtitulo",
         name = "Carlos"
     }) => {
-    console.log(title);
-    // console.log(typeof(otro));
-    
-    // if (!otro){
-    //     throw new Error("Otro props es obligatorio");
-    // }
-    
     return (
         <>
-            <h1>{title}</h1>
-            <h3>{sayHello("EEUU")}</h3>
-            <h2>Hola Mundo</h2>
-            {/* <h4>{JSON.stringify(nombre)}</h4> */}
-            <h1>Sumando 10 + 1 = {valor + 1} </h1>
-            <h2>{otro}</h2>
-            <h1>{name}</h1>
+            <h1 data-testid="test-title">{title}</h1>
+            <h2>{subTitle}</h2>
+            <h2>{subTitle}</h2>
+            <h3>{name}</h3>
         </>
     )
 }
 
 FirstApp.propTypes={
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
     valor: PropTypes.number,
-    otro: PropTypes.number.isRequired
+    otro: PropTypes.number
 }
 
-// FirstApp.defaultProps = {
-//     title:'Titulo por defecto',
-//     otro: 111,
-//     name: 'Carlos'
+// // FirstApp.defaultProps = {
+// //     title:'Titulo por defecto',
+// //     otro: 111,
+// //     name: 'Carlos'
 // }
+
 /**
  * 
  * @returns String
